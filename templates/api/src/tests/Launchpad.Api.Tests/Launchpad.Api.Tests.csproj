@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Acme.Api\Acme.Api.csproj" />
+    <ProjectReference Include="..\..\Launchpad.Api\Launchpad.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -29,10 +29,10 @@ jobs:
         run: dotnet pack -c Release -o "$RUNNER_TEMP/packages"
 
       - name: Install the template from the package
-        run: dotnet new install "$RUNNER_TEMP"/packages/Acme.Api.Template.*.nupkg
+        run: dotnet new install "$RUNNER_TEMP"/packages/Launchpad.Api.Template.*.nupkg
 
       - name: Generate
-        run: dotnet new acme-api -n Orders -o "$RUNNER_TEMP/orders" ${{ matrix.options }}
+        run: dotnet new launchpad-api -n Orders -o "$RUNNER_TEMP/orders" ${{ matrix.options }}
 
       - name: Build and test the generated solution
         # CI=true in GitHub Actions: warnings are errors, so a template that generates warnings fails here.

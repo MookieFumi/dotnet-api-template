@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/Launchpad.Api.Tests/Launchpad.Api.Tests.csproj" />
+  </Folder>
+  <Project Path="Launchpad.Api/Launchpad.Api.csproj" />
+<!--#if (aspire) -->
+  <Project Path="Launchpad.AppHost/Launchpad.AppHost.csproj" />
+  <Project Path="Launchpad.ServiceDefaults/Launchpad.ServiceDefaults.csproj" />
+<!--#endif -->
+<!--#if (worker) -->
+  <Project Path="Launchpad.Worker/Launchpad.Worker.csproj" />
+<!--#endif -->
+</Solution>

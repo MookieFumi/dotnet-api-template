@@ -6,13 +6,13 @@
 
 <!--#if (aspire) -->
   <ItemGroup>
-    <ProjectReference Include="..\Acme.ServiceDefaults\Acme.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Launchpad.ServiceDefaults\Launchpad.ServiceDefaults.csproj" />
   </ItemGroup>
 
 <!--#endif -->
   <ItemGroup>
     <!-- Lets the test project see the public Program class that WebApplicationFactory needs. -->
-    <InternalsVisibleTo Include="Acme.Api.Tests" />
+    <InternalsVisibleTo Include="Launchpad.Api.Tests" />
   </ItemGroup>
 
 </Project>

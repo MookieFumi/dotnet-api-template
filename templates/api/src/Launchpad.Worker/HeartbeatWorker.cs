@@ -1,4 +1,4 @@
-namespace Acme.Worker;
+namespace Launchpad.Worker;
 
 /// <summary>
 /// Placeholder background service: logs a heartbeat and stops cleanly. Replace it with your own work.

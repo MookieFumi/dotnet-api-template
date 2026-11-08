@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageId>Acme.Api.Template</PackageId>
+    <PackageId>Launchpad.Api.Template</PackageId>
     <!-- CI overrides this with the version taken from the git tag (-p:PackageVersion=1.2.3). -->
     <PackageVersion>0.0.0-local</PackageVersion>
-    <Title>Acme .NET API template</Title>
-    <Authors>Acme Platform Team</Authors>
+    <Title>Launchpad .NET API template</Title>
+    <Authors>Launchpad Platform Team</Authors>
     <Description>Minimal API solution with vertical slices, governance files and GitHub Actions.</Description>
     <PackageTags>dotnet-new;templates;api</PackageTags>
     <RepositoryUrl>https://github.com/MookieFumi/dotnet-api-template</RepositoryUrl>

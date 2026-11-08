@@ -1,6 +1,6 @@
-using Acme.Api.Features.V1.Greetings.GetGreeting;
+using Launchpad.Api.Features.V1.Greetings.GetGreeting;
 
-namespace Acme.Api.Features.V1;
+namespace Launchpad.Api.Features.V1;
 
 public static class V1Endpoints
 {

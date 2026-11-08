@@ -1,4 +1,4 @@
-namespace Acme.Api.Features.V1.Greetings.GetGreeting;
+namespace Launchpad.Api.Features.V1.Greetings.GetGreeting;
 
 public static class GetGreetingEndpoint
 {

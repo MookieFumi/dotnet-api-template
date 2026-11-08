@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Acme.Api\Acme.Api.csproj" />
+    <ProjectReference Include="..\Launchpad.Api\Launchpad.Api.csproj" />
 <!--#if (worker) -->
-    <ProjectReference Include="..\Acme.Worker\Acme.Worker.csproj" />
+    <ProjectReference Include="..\Launchpad.Worker\Launchpad.Worker.csproj" />
 <!--#endif -->
   </ItemGroup>
 

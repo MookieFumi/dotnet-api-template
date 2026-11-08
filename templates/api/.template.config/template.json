@@ -1,16 +1,16 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Acme Platform Team",
+  "author": "Launchpad Platform Team",
   "classifications": [ "Web", "API", "Solution" ],
-  "identity": "Acme.Api.Template",
-  "name": "Acme .NET API",
-  "shortName": "acme-api",
+  "identity": "Launchpad.Api.Template",
+  "name": "Launchpad .NET API",
+  "shortName": "launchpad-api",
   "description": "Minimal API with vertical slices, tests, governance files and GitHub Actions.",
   "tags": {
     "language": "C#",
     "type": "solution"
   },
-  "sourceName": "Acme",
+  "sourceName": "Launchpad",
   "preferNameDirectory": true,
   "symbols": {
     "aspire": {
@@ -31,16 +31,16 @@
       "modifiers": [
         {
           "condition": "(!aspire)",
-          "exclude": [ "src/Acme.AppHost/**", "src/Acme.ServiceDefaults/**" ]
+          "exclude": [ "src/Launchpad.AppHost/**", "src/Launchpad.ServiceDefaults/**" ]
         },
         {
           "condition": "(!worker)",
-          "exclude": [ "src/Acme.Worker/**" ]
+          "exclude": [ "src/Launchpad.Worker/**" ]
         }
       ]
     }
   ],
   "primaryOutputs": [
-    { "path": "src/Acme.slnx" }
+    { "path": "src/Launchpad.slnx" }
   ]
 }

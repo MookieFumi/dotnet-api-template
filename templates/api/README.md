@@ -1,10 +1,10 @@
-# Acme
+# Launchpad
 
-Generated from the `acme-api` template.
+Generated from the `launchpad-api` template.
 
 ```bash
 cd src
-dotnet run --project Acme.Api
+dotnet run --project Launchpad.Api
 dotnet test
 ```
 

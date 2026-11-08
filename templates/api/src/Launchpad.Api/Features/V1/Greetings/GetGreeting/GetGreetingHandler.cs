@@ -1,4 +1,4 @@
-namespace Acme.Api.Features.V1.Greetings.GetGreeting;
+namespace Launchpad.Api.Features.V1.Greetings.GetGreeting;
 
 /// <summary>
 /// The smallest possible slice: no database, one rule. Replace it with your first real feature.

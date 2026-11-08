@@ -1,10 +1,10 @@
-namespace Acme.Api.Features;
+namespace Launchpad.Api.Features;
 
 /// <summary>
 /// Registers slice handlers by convention, so a new slice needs no extra line in DI.
 /// </summary>
 /// <remarks>
-/// A handler is any concrete class in a namespace below <c>Acme.Api.Features</c> whose name ends in
+/// A handler is any concrete class in a namespace below <c>Launchpad.Api.Features</c> whose name ends in
 /// <c>Handler</c>. Each one is scoped.
 /// </remarks>
 public static class HandlerRegistration

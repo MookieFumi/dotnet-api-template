@@ -1,11 +1,11 @@
 using System.Net;
 using System.Net.Http.Json;
 
-using Acme.Api.Features.V1.Greetings.GetGreeting;
+using Launchpad.Api.Features.V1.Greetings.GetGreeting;
 
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace Acme.Api.Tests.Features;
+namespace Launchpad.Api.Tests.Features;
 
 public sealed class GetGreetingTests(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
 {
