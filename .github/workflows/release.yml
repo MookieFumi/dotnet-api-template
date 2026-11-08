@@ -1,0 +1,31 @@
+# .github/workflows/release.yml
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Pack
+        # The version is the tag without the leading "v": v1.2.0 publishes 1.2.0.
+        run: dotnet pack -c Release -o packages -p:PackageVersion="${GITHUB_REF_NAME#v}"
+
+      - name: Publish to GitHub Packages
+        run: >
+          dotnet nuget push "packages/*.nupkg"
+          --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+          --api-key "${{ secrets.GITHUB_TOKEN }}"

@@ -1,0 +1,10 @@
+# Governance files: changes need a review from their owners.
+# Replace @your-org/platform-team with the team that owns the rules.
+
+/src/Directory.Build.props        @your-org/platform-team
+/src/tests/Directory.Build.props  @your-org/platform-team
+/src/Directory.Packages.props     @your-org/platform-team
+/src/nuget.config                 @your-org/platform-team
+/src/.editorconfig                @your-org/platform-team
+/src/global.json                  @your-org/platform-team
+/.github/                         @your-org/platform-team

@@ -1,0 +1,15 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.6.1">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AspireUseCliBundle>true</AspireUseCliBundle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.Api\Acme.Api.csproj" />
+<!--#if (worker) -->
+    <ProjectReference Include="..\Acme.Worker\Acme.Worker.csproj" />
+<!--#endif -->
+  </ItemGroup>
+
+</Project>

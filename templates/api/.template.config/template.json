@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Acme Platform Team",
+  "classifications": [ "Web", "API", "Solution" ],
+  "identity": "Acme.Api.Template",
+  "name": "Acme .NET API",
+  "shortName": "acme-api",
+  "description": "Minimal API with vertical slices, tests, governance files and GitHub Actions.",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Acme",
+  "preferNameDirectory": true,
+  "symbols": {
+    "aspire": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Adds an Aspire AppHost and the ServiceDefaults project."
+    },
+    "worker": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Adds a background worker project."
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!aspire)",
+          "exclude": [ "src/Acme.AppHost/**", "src/Acme.ServiceDefaults/**" ]
+        },
+        {
+          "condition": "(!worker)",
+          "exclude": [ "src/Acme.Worker/**" ]
+        }
+      ]
+    }
+  ],
+  "primaryOutputs": [
+    { "path": "src/Acme.slnx" }
+  ]
+}

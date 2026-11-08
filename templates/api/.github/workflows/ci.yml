@@ -1,0 +1,40 @@
+# .github/workflows/ci.yml
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: src/global.json
+          cache: true
+          cache-dependency-path: "**/Directory.Packages.props"
+
+      - name: Restore
+        run: dotnet restore
+        working-directory: src
+
+      - name: Build
+        # GITHUB_ACTIONS=true turns warnings into errors (see Directory.Build.props).
+        run: dotnet build --no-restore -c Release
+        working-directory: src
+
+      - name: Test
+        run: dotnet test --no-build -c Release
+        working-directory: src

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageId>Acme.Api.Template</PackageId>
+    <!-- CI overrides this with the version taken from the git tag (-p:PackageVersion=1.2.3). -->
+    <PackageVersion>0.0.0-local</PackageVersion>
+    <Title>Acme .NET API template</Title>
+    <Authors>Acme Platform Team</Authors>
+    <Description>Minimal API solution with vertical slices, governance files and GitHub Actions.</Description>
+    <PackageTags>dotnet-new;templates;api</PackageTags>
+    <RepositoryUrl>https://github.com/MookieFumi/dotnet-api-template</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- The package holds files to copy, not an assembly. -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeSymbols>false</IncludeSymbols>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+
+    <!-- The template content is full of .cs and .csproj files that must not be compiled here. -->
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <!-- Without this, NuGet drops every file that starts with a dot: .editorconfig, .gitignore. -->
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates/**/*" Exclude="templates/**/bin/**;templates/**/obj/**" />
+    <None Include="README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

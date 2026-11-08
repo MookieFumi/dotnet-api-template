@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+
+<!--#if (aspire) -->
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.ServiceDefaults\Acme.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+<!--#endif -->
+  <ItemGroup>
+    <!-- Lets the test project see the public Program class that WebApplicationFactory needs. -->
+    <InternalsVisibleTo Include="Acme.Api.Tests" />
+  </ItemGroup>
+
+</Project>

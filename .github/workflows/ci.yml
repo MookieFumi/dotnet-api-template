@@ -1,0 +1,42 @@
+# .github/workflows/ci.yml
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  template:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        options: ["", "--aspire", "--worker", "--aspire --worker"]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Pack
+        run: dotnet pack -c Release -o "$RUNNER_TEMP/packages"
+
+      - name: Install the template from the package
+        run: dotnet new install "$RUNNER_TEMP"/packages/Acme.Api.Template.*.nupkg
+
+      - name: Generate
+        run: dotnet new acme-api -n Orders -o "$RUNNER_TEMP/orders" ${{ matrix.options }}
+
+      - name: Build and test the generated solution
+        # CI=true in GitHub Actions: warnings are errors, so a template that generates warnings fails here.
+        run: |
+          dotnet build -c Release
+          dotnet test --no-build -c Release
+        working-directory: ${{ runner.temp }}/orders/src

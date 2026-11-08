@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+
+<!--#if (aspire) -->
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.ServiceDefaults\Acme.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+<!--#endif -->
+</Project>
